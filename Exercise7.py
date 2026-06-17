@@ -14,3 +14,19 @@ Call `printFizzBuzz(1, 30)`.
 
 Hint: look up the `%` (modulo) operator
 """
+def fizzBuzz(n):
+    if n % 3 == 0 and n % 5 == 0:
+        return "FizzBuzz"
+    elif n % 3 == 0 and not n % 5 == 0:
+        return "Fizz"
+    elif n % 5 == 0 and not n % 3 == 0:
+        return "Buzz"
+    else:
+        return str(n)
+    
+def printFizzBuzz(start, end):
+    for num in range(start, end + 1):
+        print(fizzBuzz(num))
+
+# test
+printFizzBuzz(1, 30)
