@@ -23,4 +23,40 @@ Test with:
 """
 
 def checkPassword(password):
+    if len(password) < 8:
+        return "Too Short"
     
+    if password.lower() == "password":
+        return "Too obvious"
+    
+    has_number = False
+    for char in password:
+        if char.isdigit():
+            has_number = True
+            break
+    
+    if not has_number:
+        return "Needs a number"
+    
+    has_uppercase = False
+    for char in password:
+        if char.isupper():
+            has_uppercase = True
+            break
+    
+    if not has_uppercase:
+        return "Needs an uppercase letter"
+    
+    if " " in password:
+        return "No spaces allowed"
+    
+    return "Password accepted"
+
+# tests
+print(f'"abc" -> {checkPassword("abc")}')
+print(f'"password" -> {checkPassword("password")}')
+print(f'"hellothere" -> {checkPassword("hellothere")}')
+print(f'"HelloThere" -> {checkPassword("HelloThere")}')
+print(f'"Hello There1" -> {checkPassword("Hello There1")}')
+print(f'"Hello123" -> {checkPassword("Hello123")}')
+print(f'"Tr0ub4dor" -> {checkPassword("Tr0ub4dor")}')
