@@ -33,6 +33,7 @@ def convertTemp(value, unit):
     else:
         "Invalid Input"
 
+# tests
 convertTemp(100, "C")
 convertTemp(32, "F")
 convertTemp(37, "C")
