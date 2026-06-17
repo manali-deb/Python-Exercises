@@ -21,3 +21,32 @@ Category: Normal
 
 Test with at least 4 different people.
 """
+def calculateBMI(weightKG, heightM):
+    bmi = weightKG / heightM ** 2
+    return bmi
+
+def getBMICategory(bmi):
+    if bmi > 30:
+        return "Obese"
+    elif bmi > 25:
+        return "Overweight"
+    elif bmi > 18.5:
+        return "Normal"
+    else:
+        return "Underweight"
+    
+def printBMIReport(name, weightKG, heightM):
+    bmi = calculateBMI(weightKG, heightM)
+
+    print(f"Name:     {name}")
+    print(f"Weight:   {weightKG:.2f} kg")
+    print(f"Height:   {heightM:.2f} m")
+    print(f"BMI:      {bmi:.2f}")
+    print(f"Category: {getBMICategory(bmi)}")
+    print()
+
+# tests
+printBMIReport("Manali", 65, 1.65)
+printBMIReport("Benny", 100, 2)
+printBMIReport("Basab", 300, 1.8)
+printBMIReport("John", 85, 0.65)
