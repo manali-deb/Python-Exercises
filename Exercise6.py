@@ -14,3 +14,38 @@ Then write `printAnalysis(word)` that prints each key and value neatly.
 
 Test with: `"Python"`, `"racecar"`, `"Hello"`, `"level"`, `"Manali"`
 """
+def analyzeWord(word):
+    vowels = "aeiou"
+    vowel_count = 0
+
+    for char in word.lower():
+        if char in vowels:
+            vowel_count += 1
+
+    analysis = {
+        "length": len(word),
+        "uppercase": word.upper(),
+        "lowercase": word.lower(),
+        "reversed": word[::-1],
+        "vowel_count": vowel_count,
+        "is_palindrome": word.lower() == word[::-1].lower()
+    }
+
+    return analysis
+
+def printAnalysis(word):
+    analysis = analyzeWord(word)
+
+    print(f"Analysis for '{word}'")
+
+    for key, value in analysis.items():
+        print(f"{key}: {value}")
+
+    print()
+
+# tests
+printAnalysis("Python")
+printAnalysis("racecar")
+printAnalysis("Hello")
+printAnalysis("level")
+printAnalysis("Manali")
