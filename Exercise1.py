@@ -1,4 +1,4 @@
-# first exercise
+# Exercise 1
 """
 Temperature Converter
 
