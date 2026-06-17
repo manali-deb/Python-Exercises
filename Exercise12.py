@@ -20,3 +20,30 @@ A man a plan a canal Panama → Palindrome
 
 Test list: `["racecar", "hello", "level", "Manali", "Was it a car or a cat I saw", "Python", "Madam"]`
 """
+def isPalindrome(text):
+    cleaned = ""
+    for char in text.lower():
+        if char in "abcdefghijklmnopqrstuvwxyz0123456789":
+            cleaned += char
+    
+    return cleaned == cleaned[::-1]
+
+def checkList(words):
+    for word in words:
+        if isPalindrome(word):
+            print(f"{word} -> Palindrome")
+        else:
+            print(f"{word} -> Not a palindrome")
+
+# tests
+testWords = [
+    "racecar", 
+    "hello", 
+    "level", 
+    "Manali", 
+    "Was it a car or a cat I saw", 
+    "Python", 
+    "Madam"
+]
+
+checkList(testWords)
